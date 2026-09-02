@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -64,16 +65,14 @@ public class PlayerMove : MonoBehaviour
         Vector2 direction = new Vector2(h, v);
         
         // 실습 과제 3
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Speed += 0.1f;
-        }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Speed -= 0.1f;
+            SpeedUpDown(KeyCode.Q);
         }
-        
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            SpeedUpDown(KeyCode.E);
+        } 
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 타입이 있다. 벡터는 크기와 방향을 의미한다.
         // Vector2 direction = new Vector2(h, v); // 왼쪽 방향
@@ -90,5 +89,17 @@ public class PlayerMove : MonoBehaviour
         
         // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
         // transform.position += new Vector2(transform.position + (Vector3)direction * Speed * Time.deltaTime);
+    }
+
+    public void SpeedUpDown(KeyCode key)
+    {
+        if (key == KeyCode.E)
+        {
+            Speed += 0.1f;
+        }
+        else if (key == KeyCode.Q)
+        {
+            Speed -= 0.1f;
+        }
     }
 }
