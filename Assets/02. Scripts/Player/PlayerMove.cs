@@ -63,6 +63,17 @@ public class PlayerMove : MonoBehaviour
         
         Vector2 direction = new Vector2(h, v);
         
+        // 실습 과제 3
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Speed += 0.1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Speed -= 0.1f;
+        }
+        
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 타입이 있다. 벡터는 크기와 방향을 의미한다.
         // Vector2 direction = new Vector2(h, v); // 왼쪽 방향
