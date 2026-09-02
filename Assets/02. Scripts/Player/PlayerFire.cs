@@ -35,7 +35,7 @@ public class PlayerFire : MonoBehaviour
         SubFireCoolTime += Time.deltaTime;
 
         // 1. 스페이스바를 누르면
-        if ((Input.GetKeyDown(KeyCode.Space) || isAuto))
+        if ((Input.GetKey(KeyCode.Space) || isAuto))
         {
             if(FireCoolTime >= FireRate)
             {
