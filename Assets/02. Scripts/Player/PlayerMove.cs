@@ -26,20 +26,39 @@ public class PlayerMove : MonoBehaviour
         
         // Debug.Log("왼쪽 방향키를 누르는 중");
         
-        // 1.2
+        // 1.2 
         float h = Input.GetAxisRaw("Horizontal"); // 키보드 좌/우 입력 상태에 따라 -1f ~ 1f
         float v = Input.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 1f
         
         Debug.Log($"h:{h}, v:{v}");
         
+        // 실습 과제 1
+        // if ((h != 0) && (transform.position.x < borderLeft || transform.position.x > borderRight))
+        // {
+        //     h = h * -1;
+        // }
+        //
+        // if((v != 0) && (transform.position.y > borderUp || transform.position.y < borderUnder))
+        // {
+        //     v = v * -1;
+        // }
+        
+        // 실습 과제 2
         if ((h != 0) && (transform.position.x < borderLeft || transform.position.x > borderRight))
         {
-            h = h * -1;
+            transform.position = new Vector2(transform.position.x * -1, transform.position.y);
         }
         
         if((v != 0) && (transform.position.y > borderUp || transform.position.y < borderUnder))
         {
-            v = v * -1;
+            if (transform.position.y > borderUp)
+            {
+                transform.position = new Vector2(transform.position.x, borderUnder);
+            }
+            else if (transform.position.y < borderUnder)
+            {
+                transform.position = new Vector2(transform.position.x, borderUp);
+            }
         }
         
         Vector2 direction = new Vector2(h, v);
