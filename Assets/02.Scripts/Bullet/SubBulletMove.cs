@@ -3,10 +3,12 @@ using UnityEngine;
 public class SubBulletMove : MonoBehaviour
 {
     public float Speed;
-    
+
     private void Update()
     {
-        Move();       
+        Move();
+        
+        
     }
 
     public void Move()

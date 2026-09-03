@@ -28,10 +28,8 @@ public class PlayerMove : MonoBehaviour
     public void Update()
     {
         Move();
-        
-        SpeedChange();
-        
 
+        SpeedChange();
     }
 
     public void Move()
@@ -98,7 +96,6 @@ public class PlayerMove : MonoBehaviour
 
     public void BulletFire()
     {
-        
     }
 
     public void SpeedChange()
@@ -111,7 +108,7 @@ public class PlayerMove : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             KeyboardCommand(KeyCode.E);
-        } 
+        }
     }
 
     public void KeyboardCommand(KeyCode key)
