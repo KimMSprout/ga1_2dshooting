@@ -67,7 +67,7 @@ public class PlayerFire : MonoBehaviour
 
     private void AutoFire()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             isAuto = !isAuto;
         }
