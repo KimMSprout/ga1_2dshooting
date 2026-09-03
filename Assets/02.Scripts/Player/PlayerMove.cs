@@ -47,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal"); // 키보드 좌/우 입력 상태에 따라 -1f ~ 1f
         float v = Input.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 1f
 
-        Debug.Log($"h:{h}, v:{v}");
+        // Debug.Log($"h:{h}, v:{v}");
 
         // 실습 과제 1
         // if ((h != 0) && (transform.position.x < borderLeft || transform.position.x > borderRight))
