@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 898441601}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,7 +624,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4212686500750042253, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07
+      value: 1.76
       objectReference: {fileID: 0}
     - target: {fileID: 4212686500750042253, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_LocalPosition.y
@@ -666,7 +666,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmemyDirectDown
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6856080746430805545, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -692,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectDown
   Health: 100
-  MoveSpeed: 1
+  _moveSpeed: 4
 --- !u!1 &1448619713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
@@ -711,8 +712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowPlayer
   Health: 100
-  MoveSpeed: 4
-  player: {fileID: 898441598}
+  _moveSpeed: 2
 --- !u!1 &1519313999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
@@ -731,8 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectPlayer
   Health: 100
-  MoveSpeed: 3
-  player: {fileID: 898441598}
+  _moveSpeed: 4
 --- !u!1 &1546072699
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +846,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmemyDirectPlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6856080746430805545, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -865,11 +865,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4212686500750042253, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9316696
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 4212686500750042253, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.91
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 4212686500750042253, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_LocalPosition.z
@@ -911,7 +911,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmemyFollowPlayer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6856080746430805545, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -2,12 +2,23 @@ using UnityEngine;
 
 public class EnemyFollowPlayer : Enemy
 {
-    public Transform player;
+    private GameObject _player;
+    private Vector2 _direction;
 
-    public override void Update()
+    public void Start()
     {
-        Vector2 direction = player.transform.position.normalized;
-        SetDirection(direction);
+        _player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public void Update()
+    {
+        Vector2 direction = _player.transform.position.normalized;
+        _direction = direction;
         Move();
+    }
+
+    protected override void Move()
+    {
+        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
 }
