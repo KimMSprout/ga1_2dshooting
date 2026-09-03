@@ -10,11 +10,11 @@ public class PlayerMove : MonoBehaviour
 
     // 필요 필드:
     public float Speed;
-    float borderLeft = -2.3f;
-    float borderRight = 2.3f;
-    float borderUp = 0f;
-    float borderUnder = -5f;
-    private Command _ICommand;
+    float _borderLeft = -2.3f;
+    float _borderRight = 2.3f;
+    float _borderUp = 0f;
+    float _borderUnder = -5f;
+    private Command _iCommand;
 
     public void Start()
     {
@@ -61,20 +61,20 @@ public class PlayerMove : MonoBehaviour
         // }
 
         // 실습 과제 2
-        if ((h != 0) && (transform.position.x < borderLeft || transform.position.x > borderRight))
+        if ((h != 0) && (transform.position.x < _borderLeft || transform.position.x > _borderRight))
         {
             transform.position = new Vector2(transform.position.x * -1, transform.position.y);
         }
 
-        if ((v != 0) && (transform.position.y > borderUp || transform.position.y < borderUnder))
+        if ((v != 0) && (transform.position.y > _borderUp || transform.position.y < _borderUnder))
         {
-            if (transform.position.y > borderUp)
+            if (transform.position.y > _borderUp)
             {
-                transform.position = new Vector2(transform.position.x, borderUnder);
+                transform.position = new Vector2(transform.position.x, _borderUnder);
             }
-            else if (transform.position.y < borderUnder)
+            else if (transform.position.y < _borderUnder)
             {
-                transform.position = new Vector2(transform.position.x, borderUp);
+                transform.position = new Vector2(transform.position.x, _borderUp);
             }
         }
 

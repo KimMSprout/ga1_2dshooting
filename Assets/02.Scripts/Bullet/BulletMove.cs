@@ -3,10 +3,10 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     public float Speed;
-    
+
     private void Update()
     {
-        Move();       
+        Move();
     }
 
     public void Move()
@@ -14,5 +14,4 @@ public class BulletMove : MonoBehaviour
         Vector2 direction = Vector2.up;
         transform.Translate(direction * Speed * Time.deltaTime);
     }
-    
 }

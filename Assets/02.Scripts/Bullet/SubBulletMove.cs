@@ -7,8 +7,6 @@ public class SubBulletMove : MonoBehaviour
     private void Update()
     {
         Move();
-        
-        
     }
 
     public void Move()
