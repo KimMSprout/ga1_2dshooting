@@ -6,9 +6,20 @@ public class Enemy : MonoBehaviour
     public float Health = 100;
     public float MoveSpeed;
 
-    private void Update()
+    private Vector2 _direction;
+
+    public void SetDirection(Vector2 direction)
     {
-        Vector2 direction = Vector2.down;
-        transform.Translate(direction * MoveSpeed * Time.deltaTime);
+        _direction = direction;
+    }
+
+    public virtual void Update()
+    {
+        Move();
+    }
+
+    protected void Move()
+    {
+        transform.Translate(_direction * MoveSpeed * Time.deltaTime);
     }
 }

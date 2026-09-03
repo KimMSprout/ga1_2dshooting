@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 898441596}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.68, z: 0}
+  m_LocalPosition: {x: 1.562, y: -3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -664,13 +664,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_Name
-      value: Ememy (1)
+      value: EmemyDirectDown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1162992304}
   m_SourcePrefab: {fileID: 100100000, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+--- !u!1 &1162992298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+  m_PrefabInstance: {fileID: 909459129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1162992304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162992298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02df109fe7d0dcd43973b984913880cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectDown
+  Health: 100
+  MoveSpeed: 1
+--- !u!1 &1448619713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+  m_PrefabInstance: {fileID: 1966920916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1448619719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448619713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5f9d5d545b1634fa862b6204ebce48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowPlayer
+  Health: 100
+  MoveSpeed: 4
+  player: {fileID: 898441598}
+--- !u!1 &1519313999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+  m_PrefabInstance: {fileID: 1739699905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1519314005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519313999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b9d35b99dfdad44a63ba470976f9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectPlayer
+  Health: 100
+  MoveSpeed: 3
+  player: {fileID: 898441598}
 --- !u!1 &1546072699
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,12 +845,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_Name
-      value: Ememy
+      value: EmemyDirectPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1519314005}
   m_SourcePrefab: {fileID: 100100000, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
 --- !u!1001 &1966920916
 PrefabInstance:
@@ -844,12 +909,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
       propertyPath: m_Name
-      value: Ememy (2)
+      value: EmemyFollowPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7198695983090928571, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1448619719}
   m_SourcePrefab: {fileID: 100100000, guid: f4f5e461253f7bf4f91eafeb21c00d78, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
