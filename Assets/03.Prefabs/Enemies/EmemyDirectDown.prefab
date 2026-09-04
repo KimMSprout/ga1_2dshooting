@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1398419609507686535}
   - component: {fileID: 9202752515871880903}
   m_Layer: 6
-  m_Name: Ememy
+  m_Name: EmemyDirectDown
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,4 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectDown
   _health: 100
+  damage: 20
   _moveSpeed: 5

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3442663266849123600}
   - component: {fileID: 2107928452735620599}
   - component: {fileID: 1398419609507686535}
-  - component: {fileID: 9202752515871880903}
+  - component: {fileID: 4464108108992651537}
   m_Layer: 6
-  m_Name: Ememy
+  m_Name: EmemyDirectPlayer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &9202752515871880903
+--- !u!114 &4464108108992651537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7198695983090928571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02df109fe7d0dcd43973b984913880cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b9d35b99dfdad44a63ba470976f9d3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectDown
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectPlayer
   _health: 100
   _moveSpeed: 5
