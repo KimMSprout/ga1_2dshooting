@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        float spawnEnemyType = Random.Range(1, 11);
+        int spawnEnemyType = Random.Range(1, 11);
         Enemy enemy = null;
         switch (spawnEnemyType)
         {
