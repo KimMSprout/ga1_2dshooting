@@ -10,12 +10,13 @@ public class EnemySpawner : MonoBehaviour
     private float _timer;
 
     // - 생성할 프리팹
-    [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private Enemy _enemyDirectDownPrefab;
+    [SerializeField] private Enemy _enemyDirectPlayerPrefab;
+    [SerializeField] private Enemy _enemyFollowPlayerPrefab;
 
     private void Update()
     {
         _timer += Time.deltaTime;
-
         if (_timer >= _spawnInterval)
         {
             _timer = 0;
@@ -28,7 +29,27 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        Enemy enemy = Instantiate(_enemyPrefab);
+        float spawnEnemyType = Random.Range(1, 11);
+        Enemy enemy = null;
+        switch (spawnEnemyType)
+        {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                enemy = Instantiate(_enemyDirectDownPrefab);
+                break;
+            case 6:
+            case 7:
+            case 8:
+                enemy = Instantiate(_enemyDirectPlayerPrefab);
+                break;
+            case 9:
+            case 10:
+                enemy = Instantiate(_enemyFollowPlayerPrefab);
+                break;
+        }
         enemy.transform.position = transform.position;
     }
 }
