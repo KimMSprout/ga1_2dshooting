@@ -7,13 +7,13 @@ public class EnemyDirectPlayer : Enemy
 
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
         Vector2 direction = _player.transform.position.normalized;
         _direction = direction;
     }
 
     public void Update()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
         Move();
     }
 
