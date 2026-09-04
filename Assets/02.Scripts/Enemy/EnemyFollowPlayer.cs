@@ -12,6 +12,9 @@ public class EnemyFollowPlayer : Enemy
 
     public void Update()
     {
+	
+		if(_player == null) return;
+    
         Vector2 direction = _player.transform.position.normalized;
         _direction = direction;
         Move();
@@ -21,4 +24,5 @@ public class EnemyFollowPlayer : Enemy
     {
         transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
+
 }

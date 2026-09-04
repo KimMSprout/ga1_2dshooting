@@ -14,7 +14,6 @@ public class EnemyDirectDown : Enemy
     public void Update()
     {
         Move();
-        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     protected override void Move()
