@@ -13,7 +13,6 @@ public class EnemyDirectDown : Enemy
 
     public void Update()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
         Move();
     }
 
