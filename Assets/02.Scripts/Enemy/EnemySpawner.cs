@@ -10,9 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private float _timer;
 
     // - 생성할 프리팹
-    [SerializeField] private Enemy _enemyDirectDownPrefab;
-    [SerializeField] private Enemy _enemyDirectPlayerPrefab;
-    [SerializeField] private Enemy _enemyFollowPlayerPrefab;
+    [SerializeField] private Enemy[] _enemyPrefabs;
 
     private void Update()
     {
@@ -31,6 +29,10 @@ public class EnemySpawner : MonoBehaviour
     {
         int spawnEnemyType = Random.Range(1, 11);
         Enemy enemy = null;
+
+        // Todo : Scriptable Object를 사용해서 리팩토링
+        // 이유 1: 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알 수가 없음
+        // 이유 2: 각 에너미 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵다.
         switch (spawnEnemyType)
         {
             case 1:
@@ -38,18 +40,19 @@ public class EnemySpawner : MonoBehaviour
             case 3:
             case 4:
             case 5:
-                enemy = Instantiate(_enemyDirectDownPrefab);
+                enemy = Instantiate(_enemyPrefabs[0]);
                 break;
             case 6:
             case 7:
             case 8:
-                enemy = Instantiate(_enemyDirectPlayerPrefab);
+                enemy = Instantiate(_enemyPrefabs[1]);
                 break;
             case 9:
             case 10:
-                enemy = Instantiate(_enemyFollowPlayerPrefab);
+                enemy = Instantiate(_enemyPrefabs[2]);
                 break;
         }
+
         enemy.transform.position = transform.position;
     }
 }
