@@ -7,13 +7,13 @@ public class EnemyDirectDown : Enemy
 
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
         Vector2 direction = Vector2.down;
         _direction = direction;
     }
 
     public void Update()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
         Move();
     }
 
