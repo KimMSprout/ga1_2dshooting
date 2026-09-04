@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
             Spawn();
         }
     }
-
+    
     private void Spawn()
     {
         int spawnEnemyType = Random.Range(1, 11);
