@@ -18,15 +18,17 @@ public class Item : MonoBehaviour
 
     private float _spawnCooltime = 3f;
     private float _spawnTimer = 0f;
+
+    private int Test = 1;
     
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+            _player = GameObject.FindGameObjectWithTag("Player");
         if (_player == null)
         {
             return;
         }    
-        _direction = _player.transform.position.normalized;
+        _direction = (_player.transform.position - transform.position).normalized;
     }
     
     void Update()
