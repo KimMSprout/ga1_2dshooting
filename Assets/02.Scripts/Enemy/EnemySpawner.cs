@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     // - 생성할 프리팹
     [SerializeField] private Enemy[] _enemyPrefabs;
-    
+
     private void Update()
     {
         _timer += Time.deltaTime;
@@ -24,11 +24,11 @@ public class EnemySpawner : MonoBehaviour
             Spawn();
         }
     }
-    
+
     private void Spawn()
     {
         int spawnEnemyType = Random.Range(1, 11);
-        
+
         Enemy enemy = null;
 
         // Todo : Scriptable Object를 사용해서 리팩토링

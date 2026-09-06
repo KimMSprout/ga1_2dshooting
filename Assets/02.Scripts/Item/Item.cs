@@ -11,7 +11,7 @@ enum TYPE
 public class Item : MonoBehaviour
 {
     [SerializeField] private TYPE _type;
-    
+
     private GameObject _player;
     private Vector2 _direction;
     private float _moveSpeed = 3f;
@@ -19,18 +19,17 @@ public class Item : MonoBehaviour
     private float _spawnCooltime = 3f;
     private float _spawnTimer = 0f;
 
-    private int Test = 1;
-    
     void Start()
     {
-            _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("Player");
         if (_player == null)
         {
             return;
-        }    
+        }
+
         _direction = (_player.transform.position - transform.position).normalized;
     }
-    
+
     void Update()
     {
         _spawnTimer += Time.deltaTime;
@@ -64,6 +63,7 @@ public class Item : MonoBehaviour
                 other.gameObject.GetComponent<PlayerFire>().AttackSpeedUp();
                 break;
         }
+
         Destroy(this.gameObject);
     }
 }

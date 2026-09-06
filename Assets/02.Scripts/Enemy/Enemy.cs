@@ -7,11 +7,11 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private Item[] _items;
-    
+
     public int damage = 10;
-    
+
     protected abstract void Move();
-    
+
     public void TakeDamage(int damage)
     {
         _health -= damage;
@@ -22,20 +22,21 @@ public abstract class Enemy : MonoBehaviour
             if (random <= 30)
             {
                 int randomItem = UnityEngine.Random.Range(0, 3);
-                Item item = Instantiate(_items[randomItem], this.gameObject.transform.position, this.gameObject.transform.rotation);
+                Item item = Instantiate(_items[randomItem], this.gameObject.transform.position,
+                    this.gameObject.transform.rotation);
             }
-            
-             Destroy(this.gameObject);
+
+            Destroy(this.gameObject);
         }
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
-    
-            Player player = other.GetComponent<Player>();
-            player.TakeDamage(damage);
-        
-            Destroy(this.gameObject);
+
+        Player player = other.GetComponent<Player>();
+        player.TakeDamage(damage);
+
+        Destroy(this.gameObject);
     }
 }
