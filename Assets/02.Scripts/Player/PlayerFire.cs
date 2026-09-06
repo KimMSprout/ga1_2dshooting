@@ -71,4 +71,9 @@ public class PlayerFire : MonoBehaviour
             isAuto = !isAuto;
         }
     }
+
+    public void AttackSpeedUp()
+    {
+        FireRate -= 0.1f;
+    }
 }

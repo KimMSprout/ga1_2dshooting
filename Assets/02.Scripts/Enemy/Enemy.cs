@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using Random = System.Random;
 
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
+    [SerializeField] private Item[] _items;
+    
     public int damage = 10;
     
     protected abstract void Move();
@@ -14,6 +17,14 @@ public abstract class Enemy : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
+            int random = UnityEngine.Random.Range(1, 100 + 1);
+
+            if (random <= 30)
+            {
+                int randomItem = UnityEngine.Random.Range(0, 3);
+                Item item = Instantiate(_items[randomItem], this.gameObject.transform.position, this.gameObject.transform.rotation);
+            }
+            
              Destroy(this.gameObject);
         }
     }
@@ -23,7 +34,7 @@ public abstract class Enemy : MonoBehaviour
         if (!other.gameObject.CompareTag("Player")) return;
     
             Player player = other.GetComponent<Player>();
-        player.TakeDamage(damage);
+            player.TakeDamage(damage);
         
             Destroy(this.gameObject);
     }

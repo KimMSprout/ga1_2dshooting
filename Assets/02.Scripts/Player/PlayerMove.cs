@@ -111,6 +111,11 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void SpeedUp()
+    {
+        Speed += 5f;
+    }
+
     public void KeyboardCommand(KeyCode key)
     {
         if (key == KeyCode.E)

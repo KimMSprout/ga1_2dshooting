@@ -33,7 +33,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-
     // 충돌 관련 이벤트
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
