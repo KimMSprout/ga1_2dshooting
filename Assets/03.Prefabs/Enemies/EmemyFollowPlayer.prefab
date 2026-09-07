@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2107928452735620599}
   - component: {fileID: 1398419609507686535}
   - component: {fileID: 2688940194334502051}
+  - component: {fileID: 829174874597675664}
   m_Layer: 6
   m_Name: EmemyFollowPlayer
   m_TagString: Enemy
@@ -186,3 +187,25 @@ MonoBehaviour:
   - {fileID: 6707440183321715489, guid: db308bff2bb5ae14d89afab249c0163a, type: 3}
   - {fileID: -7161908368336475448, guid: 569fadb4de4588840b30fd0f410d8422, type: 3}
   damage: 10
+--- !u!95 &829174874597675664
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198695983090928571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f545f40c1cdd2cc4097cde45b94823ca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

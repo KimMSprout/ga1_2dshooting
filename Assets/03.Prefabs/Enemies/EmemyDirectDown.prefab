@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1398419609507686535}
   - component: {fileID: 1915446228168888954}
   - component: {fileID: 9202752515871880903}
+  - component: {fileID: 7149698536606144369}
   m_Layer: 6
   m_Name: EmemyDirectDown
   m_TagString: Enemy
@@ -176,3 +177,25 @@ MonoBehaviour:
   - {fileID: 6707440183321715489, guid: db308bff2bb5ae14d89afab249c0163a, type: 3}
   - {fileID: -7161908368336475448, guid: 569fadb4de4588840b30fd0f410d8422, type: 3}
   damage: 20
+--- !u!95 &7149698536606144369
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198695983090928571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd2d1a9818568fe4785bcb68a9d9a285, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

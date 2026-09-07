@@ -4,6 +4,8 @@ using Random = System.Random;
 
 public abstract class Enemy : MonoBehaviour
 {
+    private Animator _animator;
+
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private Item[] _items;
@@ -12,9 +14,15 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void Move();
 
+    public void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void TakeDamage(int damage)
     {
         _health -= damage;
+        _animator.SetTrigger("isHit");
         if (_health <= 0)
         {
             SpawnItem();
