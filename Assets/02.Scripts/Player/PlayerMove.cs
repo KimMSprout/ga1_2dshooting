@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
     // 목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고 싶다.
     // 플레이어의 키보드 입력은 계속해서 받는 것이기에 Update에 작성
+    private Animator _animator;
 
     // 필요 필드:
     public float Speed;
@@ -16,11 +17,15 @@ public class PlayerMove : MonoBehaviour
     float _borderUnder = -5f;
     private Command _iCommand;
 
+    public void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void Start()
     {
         Command command = new Command();
     }
-
 
     // 매 프레임마다 실행된다.
     // 초당 프레임 실행 횟수는 : 별다른 설정이 없을 경우 가능한 많이 (컴퓨터 성능에 따라, 환경에 따라 다름)
@@ -59,7 +64,9 @@ public class PlayerMove : MonoBehaviour
         // {
         //     v = v * -1;
         // }
+        Vector2 direction = new Vector2(h, v).normalized;
 
+        _animator.SetInteger("x", (int)direction.x);
         // 실습 과제 2
         if ((h != 0) && (transform.position.x < _borderLeft || transform.position.x > _borderRight))
         {
@@ -78,8 +85,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        Vector2 direction = new Vector2(h, v);
-
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 타입이 있다. 벡터는 크기와 방향을 의미한다.
         // Vector2 direction = new Vector2(h, v); // 왼쪽 방향
@@ -90,7 +95,7 @@ public class PlayerMove : MonoBehaviour
         // 3. 방향과 속도에 따라 이동한다.
         // 속도 = 방향 * 속력                      // 매직 넘버 : 보는 사람에 따라 의미가 달라질 수 있는 헷갈리는 숫자
 
-        Vector2 normalizedSpeed = direction.normalized * Speed;
+        Vector2 normalizedSpeed = direction * Speed;
         transform.Translate(normalizedSpeed * Time.deltaTime);
     }
 
