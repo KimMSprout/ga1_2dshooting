@@ -6,9 +6,9 @@ public class Item : MonoBehaviour
     [SerializeField] private TYPE _type;
     [SerializeField] private Transform _bezianPoint;
 
-    private GameObject _player;
+    private Player _player;
     private Vector2 _direction;
-    private float _moveSpeed = 3f;
+    private const float MoveSpeed = 3f;
 
     private float _spawnCooltime = 3f;
     private float _spawnTimer = 0f;
@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
         if (_player == null)
         {
             return;
@@ -47,7 +47,7 @@ public class Item : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        transform.Translate(_direction * MoveSpeed * Time.deltaTime);
         // Vector3 p1 = Vector3.Lerp(transform.position, bezianPoint.position, time);
         // transform.position = Vector3.Lerp(p1, _player.transform.position, time);
         //
@@ -58,16 +58,19 @@ public class Item : MonoBehaviour
     {
         if (other.tag != "Player") return;
 
+        // 심화 과제 1. 퍼사드 패턴 (패턴 : 객체지향에서 자주 일어나는 설계 문제를 잘 풀어내도록 경험에 의해 정리해 놓은 공식같은 거)
+        // 심화 과제 2. 조합 패턴
+
         switch (_type)
         {
             case TYPE.SpeedUp:
-                other.gameObject.GetComponent<PlayerMove>().SpeedUp(5f);
+                _player.GetComponent<PlayerMove>().SpeedUp(5f);
                 break;
             case TYPE.HealthUp:
-                other.gameObject.GetComponent<Player>().HealthUp(30);
+                _player.gameObject.GetComponent<Player>().HealthUp(30);
                 break;
             case TYPE.AttackSpeedUp:
-                other.gameObject.GetComponent<PlayerFire>().AttackSpeedUp(-0.1f);
+                _player.gameObject.GetComponent<PlayerFire>().AttackSpeedUp(0.1f);
                 break;
         }
 

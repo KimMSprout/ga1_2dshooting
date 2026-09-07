@@ -17,16 +17,21 @@ public abstract class Enemy : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
-            int random = UnityEngine.Random.Range(1, 100 + 1);
-
-            if (random <= 30)
-            {
-                int randomItem = UnityEngine.Random.Range(0, 3);
-                Item item = Instantiate(_items[randomItem], this.gameObject.transform.position,
-                    this.gameObject.transform.rotation);
-            }
+            SpawnItem();
 
             Destroy(this.gameObject);
+        }
+    }
+
+    private void SpawnItem()
+    {
+        int random = UnityEngine.Random.Range(1, 100 + 1);
+
+        if (random <= 30)
+        {
+            int randomItem = UnityEngine.Random.Range(0, 3);
+            Item item = Instantiate(_items[randomItem], transform.position,
+                transform.rotation);
         }
     }
 
