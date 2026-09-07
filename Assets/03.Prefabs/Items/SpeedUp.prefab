@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::item
   _type: 0
+  bezianPoint: {fileID: 3643628382870825792, guid: 0f9c99f3b5bf99c4fa6bbb71decc0488, type: 3}
 --- !u!58 &-1008069701104179084
 CircleCollider2D:
   m_ObjectHideFlags: 0

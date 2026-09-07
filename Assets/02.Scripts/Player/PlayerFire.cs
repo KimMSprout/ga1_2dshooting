@@ -72,8 +72,8 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
-    public void AttackSpeedUp()
+    public void AttackSpeedUp(float value)
     {
-        FireRate -= 0.1f;
+        FireRate -= value;
     }
 }

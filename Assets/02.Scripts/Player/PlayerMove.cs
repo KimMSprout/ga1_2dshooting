@@ -111,9 +111,9 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void SpeedUp()
+    public void SpeedUp(float value)
     {
-        Speed += 5f;
+        Speed += value;
     }
 
     public void KeyboardCommand(KeyCode key)

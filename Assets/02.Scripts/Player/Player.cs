@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _health = 100;
+
     public void TakeDamage(int damage)
     {
         _health -= damage;
@@ -12,8 +13,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void HealthUp()
+    public void HealthUp(int value)
     {
-        _health += 30;
+        _health += value;
     }
 }
