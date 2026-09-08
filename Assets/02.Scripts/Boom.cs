@@ -23,6 +23,9 @@ public class Boom : MonoBehaviour
         Debug.Log("폭탄과의 충돌");
         if (!other.CompareTag("Enemy")) return;
 
-        other.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
+        if (other.TryGetComponent<Enemy>(out var enemy))
+        {
+            enemy.TakeDamage(_damage);
+        }
     }
 }
