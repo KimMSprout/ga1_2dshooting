@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 9164228864637855245, guid: 698d03a6be3e66648bbf04015406c6d9, type: 3}
   - {fileID: 6707440183321715489, guid: db308bff2bb5ae14d89afab249c0163a, type: 3}
   - {fileID: -7161908368336475448, guid: 569fadb4de4588840b30fd0f410d8422, type: 3}
+  _deathEffectPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   damage: 20
 --- !u!95 &7149698536606144369
 Animator:

@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private Item[] _items;
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     public int damage = 10;
 
@@ -27,10 +28,16 @@ public abstract class Enemy : MonoBehaviour
         {
             SpawnItem();
 
+            SpanwDeathEffect();
+
             Destroy(this.gameObject);
         }
     }
 
+    void SpanwDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+    }
 
     // Todo : Scriptable Object를 사용해서 리팩토링
     // 이유 1: 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알 수가 없음
