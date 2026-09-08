@@ -16,6 +16,9 @@ public class EnemyDirectPlayer : Enemy
 
         // 2. (플레이어 위치 - 내 위치)로 정확한 이동 방향을 계산해
         _direction = (_player.transform.position - transform.position).normalized;
+
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + 90f;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     public void Update()

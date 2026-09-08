@@ -21,6 +21,9 @@ public class EnemyFollowPlayer : Enemy
 
     protected override void Move()
     {
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + 90f;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
         transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
 }
