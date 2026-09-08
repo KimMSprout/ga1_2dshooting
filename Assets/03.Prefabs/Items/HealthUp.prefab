@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::item
   _type: 1
   _bezianPoint: {fileID: 0}
+  _itemGetEffectPrefab: {fileID: 1429954232896169633, guid: 83036083a4ebcd34f98131bd3cf6f4d2, type: 3}
 --- !u!50 &1895195527782348394
 Rigidbody2D:
   serializedVersion: 5

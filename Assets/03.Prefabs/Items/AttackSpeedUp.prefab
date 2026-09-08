@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::item
   _type: 2
   _bezianPoint: {fileID: 0}
+  _itemGetEffectPrefab: {fileID: 7177991128484655659, guid: 59a35ab9f68edff40b6e5332bed330f5, type: 3}
 --- !u!61 &4954511027007437877
 BoxCollider2D:
   m_ObjectHideFlags: 0

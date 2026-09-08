@@ -5,6 +5,7 @@ public class Item : MonoBehaviour
 {
     [SerializeField] private TYPE _type;
     [SerializeField] private Transform _bezianPoint;
+    [SerializeField] private GameObject _itemGetEffectPrefab;
 
     private Player _player;
     private Vector2 _direction;
@@ -74,6 +75,12 @@ public class Item : MonoBehaviour
                 break;
         }
 
+        SpanwItemGetEffect();
         Destroy(this.gameObject);
+    }
+
+    void SpanwItemGetEffect()
+    {
+        Instantiate(_itemGetEffectPrefab, transform.position, Quaternion.identity);
     }
 }
