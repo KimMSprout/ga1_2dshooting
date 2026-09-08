@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != "Player") return;
+        if (!other.CompareTag("Player")) return;
 
         // 심화 과제 1. 퍼사드 패턴 (패턴 : 객체지향에서 자주 일어나는 설계 문제를 잘 풀어내도록 경험에 의해 정리해 놓은 공식같은 거)
         // 심화 과제 2. 조합 패턴
@@ -75,11 +75,11 @@ public class Item : MonoBehaviour
                 break;
         }
 
-        SpanwItemGetEffect();
+        SpawnItemGetEffect();
         Destroy(this.gameObject);
     }
 
-    void SpanwItemGetEffect()
+    void SpawnItemGetEffect()
     {
         Instantiate(_itemGetEffectPrefab, transform.position, Quaternion.identity);
     }

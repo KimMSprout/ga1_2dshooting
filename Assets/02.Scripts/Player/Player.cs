@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health < 0)
         {
-            SpanwDeathEffect();
+            SpwanDeathEffect();
             Destroy(this.gameObject);
         }
     }
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         _health += value;
     }
 
-    void SpanwDeathEffect()
+    void SpwanDeathEffect()
     {
         Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }

@@ -28,13 +28,13 @@ public abstract class Enemy : MonoBehaviour
         {
             SpawnItem();
 
-            SpanwDeathEffect();
+            SpawnDeathEffect();
 
             Destroy(this.gameObject);
         }
     }
 
-    void SpanwDeathEffect()
+    void SpawnDeathEffect()
     {
         Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
