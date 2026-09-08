@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
     // ex) 최대 체력보다 체력은 적어야 한다...
     public void TakeDamage(int damage)
     {
-        _health -= damage;
+        _health = Mathf.Max(0, _health - damage);
         if (_health < 0)
         {
-            SpwanDeathEffect();
+            SpawnDeathEffect();
             Destroy(this.gameObject);
         }
     }
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         _health += value;
     }
 
-    void SpwanDeathEffect()
+    void SpawnDeathEffect()
     {
         Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
