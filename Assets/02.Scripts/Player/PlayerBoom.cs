@@ -14,7 +14,7 @@ public class PlayerBoom : MonoBehaviour
     {
         _coolTimer += Time.deltaTime;
 
-        if (_coolTimer >= _coolTime && (Input.GetKey(KeyCode.B)))
+        if (_coolTimer >= _coolTime && (Input.GetKeyDown(KeyCode.B)))
         {
             _coolTimer = 0f;
             Instantiate(_boomPrefab, _boomSpawnPoint.position, _boomSpawnPoint.rotation);

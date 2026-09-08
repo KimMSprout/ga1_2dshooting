@@ -3,7 +3,8 @@ using UnityEngine.Video;
 
 public class Boom : MonoBehaviour
 {
-    [SerializeField] private int _damage = 9999999;
+    private const int InstantKillDamage = 9999999;
+    [SerializeField] private int _damage = InstantKillDamage;
     private float _boomExistTime = 3f;
     private float _boomExistTimer = 0f;
 

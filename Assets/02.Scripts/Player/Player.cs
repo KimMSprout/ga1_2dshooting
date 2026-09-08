@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health = Mathf.Max(0, _health - damage);
-        if (_health < 0)
+        if (_health <= 0)
         {
             SpawnDeathEffect();
             Destroy(this.gameObject);
