@@ -10,7 +10,9 @@ public class PlayerMove : MonoBehaviour
     private Animator _animator;
 
     // 필요 필드:
-    public float Speed;
+    [SerializeField] private float _speed;
+    public float Speed => _speed;
+
     float _borderLeft = -2.3f;
     float _borderRight = 2.3f;
     float _borderUp = 0f;
@@ -118,18 +120,18 @@ public class PlayerMove : MonoBehaviour
 
     public void SpeedUp(float value)
     {
-        Speed += value;
+        _speed += value;
     }
 
     public void KeyboardCommand(KeyCode key)
     {
         if (key == KeyCode.E)
         {
-            Speed += 0.1f;
+            _speed += 0.1f;
         }
         else if (key == KeyCode.Q)
         {
-            Speed -= 0.1f;
+            _speed -= 0.1f;
         }
     }
 }
