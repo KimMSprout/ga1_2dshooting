@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     // - 메서드를 통한 상태 변경
 
     [SerializeField] private int _health = 100;
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     // 잘 설계된 클래스는
     // - 필드 (인스턴스 변수)
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health < 0)
         {
+            SpanwDeathEffect();
             Destroy(this.gameObject);
         }
     }
@@ -38,5 +40,10 @@ public class Player : MonoBehaviour
     public void HealthUp(int value)
     {
         _health += value;
+    }
+
+    void SpanwDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 }
