@@ -2,8 +2,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    private AudioSource _audioSource;
+
     [SerializeField] public float _speed;
     public int Damage;
+
+    void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.pitch = UnityEngine.Random.Range(-3f, 3f);
+        _audioSource.Play();
+    }
 
     private void Update()
     {
