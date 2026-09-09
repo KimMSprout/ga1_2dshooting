@@ -22,12 +22,13 @@ public abstract class Enemy : MonoBehaviour
     public void Awake()
     {
         _animator = GetComponent<Animator>();
-        // _damagedaudioSource = GetComponent<AudioSource>();
+        _damagedaudioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
     {
         _health -= damage;
+
         _animator.SetTrigger("isHit");
         if (_health <= 0)
         {
@@ -35,10 +36,10 @@ public abstract class Enemy : MonoBehaviour
 
             SpawnDeathEffect();
 
-            // _damagedaudioSource.Play();
-
             Destroy(this.gameObject);
         }
+
+        _damagedaudioSource.Play();
     }
 
     void SpawnDeathEffect()

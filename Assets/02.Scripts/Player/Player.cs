@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,10 +9,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int _health = 100;
     [SerializeField] private GameObject _deathEffectPrefab;
+    private AudioSource _damagedAudioSource;
 
     // 잘 설계된 클래스는
     // - 필드 (인스턴스 변수)
     // - 필드에 잘못된 값이 할당되지 않게 막고, 정상적으로 동작하는 메서드
+
+    private void Awake()
+    {
+        _damagedAudioSource = GetComponent<AudioSource>();
+    }
 
     public int Health
     {
@@ -30,6 +37,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _health = Mathf.Max(0, _health - damage);
+        _damagedAudioSource.Play();
         if (_health <= 0)
         {
             SpawnDeathEffect();
