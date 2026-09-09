@@ -5,19 +5,24 @@ using Random = System.Random;
 public abstract class Enemy : MonoBehaviour
 {
     private Animator _animator;
+    private AudioSource _damagedaudioSource;
 
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private Item[] _items;
     [SerializeField] private GameObject _deathEffectPrefab;
 
+
     public int damage = 10;
+
+    //TODO: 에너미가 공격 당할 때 피격 효과음 추가
 
     protected abstract void Move();
 
     public void Awake()
     {
         _animator = GetComponent<Animator>();
+        // _damagedaudioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
@@ -29,6 +34,8 @@ public abstract class Enemy : MonoBehaviour
             SpawnItem();
 
             SpawnDeathEffect();
+
+            // _damagedaudioSource.Play();
 
             Destroy(this.gameObject);
         }
