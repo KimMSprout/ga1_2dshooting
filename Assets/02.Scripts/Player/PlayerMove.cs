@@ -3,8 +3,14 @@ using UnityEngine.InputSystem;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
+
 public class PlayerMove : MonoBehaviour
 {
+    public static float _borderLeft = -2.3f;
+    public static float _borderRight = 2.3f;
+    public static float _borderUp = 0f;
+    public static float _borderUnder = -5f;
+
     // 목적 : 키보드 입력에 따라서 플레이어 이동 처리를 하고 싶다.
     // 플레이어의 키보드 입력은 계속해서 받는 것이기에 Update에 작성
     private Animator _animator;
@@ -13,10 +19,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _speed;
     public float Speed => _speed;
 
-    float _borderLeft = -2.3f;
-    float _borderRight = 2.3f;
-    float _borderUp = 0f;
-    float _borderUnder = -5f;
+
     private Command _iCommand;
 
     public void Awake()
