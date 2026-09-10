@@ -3,11 +3,18 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager Instance;
+
     private int _bestScore = 0;
     private int _currentScore = 0;
 
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public int GetScore()
     {
@@ -16,6 +23,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int score)
     {
+        if (score <= 0) return;
+
         _currentScore += score;
 
         if (_currentScore > _bestScore)
