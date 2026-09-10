@@ -36,6 +36,7 @@ public class PlayerAutoMove : MonoBehaviour
                 MoveRandom();
                 break;
             case 1:
+                NearEnemy();
                 break;
             case 2:
                 break;
@@ -65,6 +66,7 @@ public class PlayerAutoMove : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            Debug.Log("3번 키 입력!");
             _isModeOn[_modeIndex] = false;
             _modeIndex = 1;
             _isModeOn[_modeIndex] = true;
@@ -86,5 +88,30 @@ public class PlayerAutoMove : MonoBehaviour
 
             _goalVector = new Vector2(randomX, randomY);
         }
+    }
+
+    private void NearEnemy()
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (targets.Length == 0) return;
+
+        GameObject target = targets[0];
+
+        float minDistance = float.MaxValue;
+
+        foreach (GameObject enemy in targets)
+        {
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                target = enemy;
+            }
+        }
+
+        _goalVector = target.transform.position;
+        _goalVector.y = -3.5f;
     }
 }
