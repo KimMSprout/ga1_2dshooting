@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAutoMove : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 3f;
+    [SerializeField] private float _stopTrakingY;
 
     private GameObject[] _enemyPrefabs;
     private bool[] _isModeOn = new bool[3];
@@ -81,7 +82,7 @@ public class PlayerAutoMove : MonoBehaviour
 
     private void MoveRandom()
     {
-        if ((int)transform.position.x == (int)_goalVector.x && (int)transform.position.y == (int)_goalVector.y)
+        if (Vector2.Distance(transform.position, _goalVector) < 0.1f)
         {
             float randomX = UnityEngine.Random.Range(PlayerMove._borderLeft, PlayerMove._borderRight);
             float randomY = UnityEngine.Random.Range(PlayerMove._borderUnder, PlayerMove._borderUp);
@@ -102,6 +103,12 @@ public class PlayerAutoMove : MonoBehaviour
 
         foreach (GameObject enemy in targets)
         {
+            _stopTrakingY = -4;
+            if (enemy.transform.position.y < _stopTrakingY)
+            {
+                continue;
+            }
+
             float distance = Vector2.Distance(transform.position, enemy.transform.position);
 
             if (distance < minDistance)
@@ -112,6 +119,16 @@ public class PlayerAutoMove : MonoBehaviour
         }
 
         _goalVector = target.transform.position;
-        _goalVector.y = -3.5f;
+
+        Vector3 diff = target.transform.position - transform.position;
+
+        if (diff.y >= 3)
+        {
+            _goalVector.y = -2.5f;
+        }
+        else
+        {
+            _goalVector.y = -4.0f;
+        }
     }
 }
