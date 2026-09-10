@@ -33,8 +33,11 @@ public abstract class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             SpawnItem();
-
             SpawnDeathEffect();
+
+            ScoreManager scoreManager = GameObject.FindAnyObjectByType<ScoreManager>();
+
+            scoreManager.AddScore(100);
 
             Destroy(this.gameObject);
         }
