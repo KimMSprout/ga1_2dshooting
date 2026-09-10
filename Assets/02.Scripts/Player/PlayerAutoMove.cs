@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerAutoMove : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 3f;
-    [SerializeField] private float _stopTrakingY;
+    [SerializeField] private float _stopTrakingY = -4f;
 
     private GameObject[] _enemyPrefabs;
     private bool[] _isModeOn = new bool[3];
@@ -103,7 +103,6 @@ public class PlayerAutoMove : MonoBehaviour
 
         foreach (GameObject enemy in targets)
         {
-            _stopTrakingY = -4;
             if (enemy.transform.position.y < _stopTrakingY)
             {
                 continue;
