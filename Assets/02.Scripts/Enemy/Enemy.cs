@@ -5,7 +5,7 @@ using Random = System.Random;
 public abstract class Enemy : MonoBehaviour
 {
     private Animator _animator;
-    private AudioSource _damagedaudioSource;
+    // private AudioSource _damagedaudioSource;
 
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
@@ -22,7 +22,7 @@ public abstract class Enemy : MonoBehaviour
     public void Awake()
     {
         _animator = GetComponent<Animator>();
-        _damagedaudioSource = GetComponent<AudioSource>();
+        // _damagedaudioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        _damagedaudioSource.Play();
+        // _damagedaudioSource.Play();
     }
 
     void SpawnDeathEffect()

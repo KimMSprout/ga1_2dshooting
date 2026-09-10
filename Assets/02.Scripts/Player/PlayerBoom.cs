@@ -5,7 +5,7 @@ public class PlayerBoom : MonoBehaviour
 {
     [SerializeField] private GameObject _boomPrefab;
     [SerializeField] private Transform _boomSpawnPoint;
-    [SerializeField] private int _damage = 9999999;
+    // [SerializeField] private int _damage = 9999999;
 
     private float _coolTime = 10f;
     private float _coolTimer = 10f;

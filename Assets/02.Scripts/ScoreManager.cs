@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     private int _bestScore = 0;
     private int _currentScore = 0;
+    private int _lastRefreshScore = -1;
 
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
@@ -46,7 +47,12 @@ public class ScoreManager : MonoBehaviour
 
     private void Refresh()
     {
+        // 매 프레임이 아닌, 적을 처치했을 때만 UI를 다시 그리도록 지정
+        if (_lastRefreshScore == _currentScore) return;
+
         _bestScoreTextUI.text = $"Best Score: {_bestScore}";
         _currentScoreTextUI.text = $"Score: {_currentScore}";
+
+        _lastRefreshScore = _currentScore;
     }
 }
