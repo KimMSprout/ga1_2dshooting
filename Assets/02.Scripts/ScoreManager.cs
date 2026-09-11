@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     private const string SaveKey = "BestScore";
 
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI _bestScoreTextUI;
     [SerializeField] private TextMeshProUGUI _currentScoreTextUI;
 

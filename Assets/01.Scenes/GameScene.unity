@@ -1420,7 +1420,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBoom
   _boomPrefab: {fileID: 466510392804012534, guid: aacf8eb7f0d12d746b1b907f850547d2, type: 3}
   _boomSpawnPoint: {fileID: 525392176}
-  _damage: 9999999
 --- !u!82 &898441607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3069,6 +3068,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9202752515871880903, guid: 5d1684d3640476b4ea46cf5bcf630554, type: 3}
     - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
       propertyPath: _enemyDirectPlayerPrefab
       value: 
       objectReference: {fileID: 4464108108992651537, guid: 0b01975abc495d04d8c559a3b4d4f2e7, type: 3}
@@ -3076,6 +3079,30 @@ PrefabInstance:
       propertyPath: _enemyFollowPlayerPrefab
       value: 
       objectReference: {fileID: 2688940194334502051, guid: 59f504a630fc68447a42ef81b53bced1, type: 3}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].Percent
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].Percent
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].Percent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].EnemyPrefab
+      value: 
+      objectReference: {fileID: 7198695983090928571, guid: 5d1684d3640476b4ea46cf5bcf630554, type: 3}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].EnemyPrefab
+      value: 
+      objectReference: {fileID: 7198695983090928571, guid: 0b01975abc495d04d8c559a3b4d4f2e7, type: 3}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].EnemyPrefab
+      value: 
+      objectReference: {fileID: 7198695983090928571, guid: 59f504a630fc68447a42ef81b53bced1, type: 3}
     - target: {fileID: 6258188495960839919, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.75
