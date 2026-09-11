@@ -12,14 +12,14 @@ public class BulletPool : MonoBehaviour
     // 메모리 할당과 해제를 최소화해서 성능 Up!;
 
     // 필요 속성
-    [Header("총알 프리팹")]
-    [SerializeField] private Bullet _bulletPrefab;
+    [Header("총알 프리팹들")]
+    [SerializeField] private Bullet[] _bulletPrefabs;
 
     [Header("풀 사이즈")]
     [SerializeField] private int _poolSize = 50;
 
     // 생성한 총알을 담아둘 풀
-    private Bullet[] _pool;
+    private Bullet[,] _pool;
 
     private void Awake()
     {
@@ -32,25 +32,44 @@ public class BulletPool : MonoBehaviour
 
         _instance = this;
 
-        _pool = new Bullet[_poolSize];
+        _pool = new Bullet[_bulletPrefabs.Length, _poolSize];
 
-        for (int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < _bulletPrefabs.Length; i++)
         {
-            Bullet bullet = Instantiate(_bulletPrefab, this.gameObject.transform);
-            bullet.gameObject.SetActive(false); // 당장 사용할 거 아니기에 비활성화
-            _pool[i] = bullet;
+            Bullet bulletPrefab = _bulletPrefabs[i];
+            for (int j = 0; j < _poolSize; j++)
+            {
+                Bullet bullet = Instantiate(bulletPrefab, this.gameObject.transform);
+                bullet.gameObject.SetActive(false); // 당장 사용할 거 아니기에 비활성화
+                _pool[i, j] = bullet;
+            }
         }
     }
 
-    public Bullet GetBullet()
+    public Bullet GetBullet(BulletType bulletType)
     {
-        foreach (Bullet bullet in _pool)
+        for (int i = 0; i < _pool.GetLength(0); i++)
         {
-            if (bullet.gameObject.activeSelf == false)
+            if (_pool[i, 0].Type != bulletType)
             {
-                bullet.gameObject.SetActive(true);
-                bullet.OnSpawn();
-                return bullet;
+                continue;
+            }
+
+            for (int j = 0; j < _pool.GetLength(1); j++)
+            {
+                Bullet bullet = _pool[i, j];
+
+                if (bullet.Type != bulletType)
+                {
+                    continue;
+                }
+
+                if (bullet.gameObject.activeSelf == false)
+                {
+                    bullet.gameObject.SetActive(true);
+                    bullet.OnSpawn();
+                    return bullet;
+                }
             }
         }
 
