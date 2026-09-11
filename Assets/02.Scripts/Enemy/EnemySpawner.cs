@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     // - 타이머
     [SerializeField] private float _spawnInterval = 3f;
 
-    [SerializeField] private EnemySpawnData[] _spawnDatas;
+    [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
 
     private float _timer;
 
@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
         // 1. 추첨할 수 있는 모든 가중치를 더한다.
         int totalWeight = 0;
-        foreach (EnemySpawnData data in _spawnDatas)
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
             totalWeight += data.Weight;
         }
@@ -48,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
 
         int cumulativeWeight = 0;
 
-        foreach (EnemySpawnData data in _spawnDatas)
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
             cumulativeWeight += data.Weight;
 
