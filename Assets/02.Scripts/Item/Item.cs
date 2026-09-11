@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private TYPE _type;
+    [SerializeField] private ItemType _type;
+    public ItemType Type => _type;
     [SerializeField] private Transform _bezianPoint;
     [SerializeField] private GameObject _itemGetEffectPrefab;
 
@@ -64,19 +65,19 @@ public class Item : MonoBehaviour
 
         switch (_type)
         {
-            case TYPE.SpeedUp:
+            case ItemType.SpeedUp:
                 _player.GetComponent<PlayerMove>().SpeedUp(5f);
                 break;
-            case TYPE.HealthUp:
+            case ItemType.HealthUp:
                 _player.gameObject.GetComponent<Player>().HealthUp(30);
                 break;
-            case TYPE.AttackSpeedUp:
+            case ItemType.AttackSpeedUp:
                 _player.gameObject.GetComponent<PlayerFire>().AttackSpeedUp(0.1f);
                 break;
         }
 
         SpawnItemGetEffect();
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 
     void SpawnItemGetEffect()
