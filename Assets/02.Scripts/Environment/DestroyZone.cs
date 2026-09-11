@@ -4,7 +4,8 @@ public class DestroyZone : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Item") ||
+            other.gameObject.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
         }

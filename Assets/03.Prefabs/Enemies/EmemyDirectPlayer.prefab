@@ -193,6 +193,7 @@ MonoBehaviour:
   _moveSpeed: 5
   _itemSpawnDataTable: {fileID: 11400000, guid: dcc75b24dba804045a179bb24de72c1b, type: 2}
   _deathEffectPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
+  _type: 1
   damage: 10
 --- !u!95 &-6608303511590683373
 Animator:

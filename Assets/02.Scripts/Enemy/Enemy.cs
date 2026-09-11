@@ -11,6 +11,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
     [SerializeField] private GameObject _deathEffectPrefab;
+    [SerializeField] private EnemyType _type;
+    public EnemyType Type => _type;
 
     public int damage = 10;
 
@@ -36,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
 
             ScoreManager.Instance.AddScore(100);
 
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
 
         // _damagedaudioSource.Play();
@@ -83,6 +85,6 @@ public abstract class Enemy : MonoBehaviour
         Player player = other.GetComponent<Player>();
         player.TakeDamage(damage);
 
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }
