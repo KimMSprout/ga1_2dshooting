@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,6 +11,15 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void OnSpawn()
+    {
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
         _audioSource.pitch = UnityEngine.Random.Range(-3f, 3f);
         _audioSource.Play();
     }
@@ -32,13 +42,12 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
+            gameObject.SetActive(false);
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
             // 응집도는 높이고, 결합도는 낮춰라
             // 결합도란 묻는거... 매번 묻는거.. (너(객체) 체력 많아?
             enemy.TakeDamage(Damage);
-
-            Destroy(this.gameObject);
         }
     }
 
