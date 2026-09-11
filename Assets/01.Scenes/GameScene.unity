@@ -318,6 +318,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4464108108992651537, guid: 0b01975abc495d04d8c559a3b4d4f2e7, type: 3}
     - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cc8c615777968443af79519bf966336, type: 2}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
       propertyPath: _enemyDirectDownPrefab
       value: 
       objectReference: {fileID: 9202752515871880903, guid: 5d1684d3640476b4ea46cf5bcf630554, type: 3}
@@ -2317,6 +2321,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2688940194334502051, guid: 59f504a630fc68447a42ef81b53bced1, type: 3}
     - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cc8c615777968443af79519bf966336, type: 2}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
       propertyPath: _enemyDirectDownPrefab
       value: 
       objectReference: {fileID: 9202752515871880903, guid: 5d1684d3640476b4ea46cf5bcf630554, type: 3}
@@ -3119,6 +3127,10 @@ PrefabInstance:
       propertyPath: _enemyPrefab
       value: 
       objectReference: {fileID: 9202752515871880903, guid: 5d1684d3640476b4ea46cf5bcf630554, type: 3}
+    - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 0cc8c615777968443af79519bf966336, type: 2}
     - target: {fileID: 1152895468880992378, guid: fc7d0a36dd22a304e904e483172468f5, type: 3}
       propertyPath: _enemyDirectDownPrefab
       value: 

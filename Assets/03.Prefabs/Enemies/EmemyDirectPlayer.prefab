@@ -191,10 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectPlayer
   _health: 100
   _moveSpeed: 5
-  _items:
-  - {fileID: 9164228864637855245, guid: 698d03a6be3e66648bbf04015406c6d9, type: 3}
-  - {fileID: 6707440183321715489, guid: db308bff2bb5ae14d89afab249c0163a, type: 3}
-  - {fileID: -7161908368336475448, guid: 569fadb4de4588840b30fd0f410d8422, type: 3}
+  _itemSpawnDataTable: {fileID: 11400000, guid: dcc75b24dba804045a179bb24de72c1b, type: 2}
   _deathEffectPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
   damage: 10
 --- !u!95 &-6608303511590683373

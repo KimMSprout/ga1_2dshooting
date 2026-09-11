@@ -9,9 +9,8 @@ public abstract class Enemy : MonoBehaviour
 
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
-    [SerializeField] private Item[] _items;
+    [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
     [SerializeField] private GameObject _deathEffectPrefab;
-
 
     public int damage = 10;
 
@@ -54,13 +53,26 @@ public abstract class Enemy : MonoBehaviour
 
     private void SpawnItem()
     {
-        int random = UnityEngine.Random.Range(1, 100 + 1);
-
-        if (random <= 30)
+        int totalWeight = 0;
+        foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
         {
-            int randomItem = UnityEngine.Random.Range(0, 3);
-            Item item = Instantiate(_items[randomItem], transform.position,
-                transform.rotation);
+            totalWeight += data.Weight;
+        }
+
+        int randomWeight = UnityEngine.Random.Range(0, totalWeight);
+
+        int cumulativeWeight = 0;
+
+        foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
+        {
+            cumulativeWeight += data.Weight;
+
+            if (randomWeight < cumulativeWeight)
+            {
+                GameObject item = Instantiate(data.ItemPrefab);
+                item.transform.position = transform.position;
+                break;
+            }
         }
     }
 
