@@ -956,17 +956,21 @@ MonoBehaviour:
     _defaultValue: 1
     _increaseValue: 1
     _defaultCost: 100
-    _increaseCost: 1.1
+    _increaseCost: 1.2
   - _name: FR
     _defaultValue: 0.1
     _increaseValue: 0.1
     _defaultCost: 1000
-    _increaseCost: 1.2
-  - _name: HealthUp
-    _defaultValue: 100
-    _increaseValue: 20
+    _increaseCost: 1.1
+  - _name: Speed
+    _defaultValue: 0.1
+    _increaseValue: 0.1
     _defaultCost: 200
     _increaseCost: 1.1
+  _uiUpgrades:
+  - {fileID: 6269302709261837442}
+  - {fileID: 6934764571511181555}
+  - {fileID: 6894824174261697407}
 --- !u!4 &518207993
 Transform:
   m_ObjectHideFlags: 0
@@ -3983,6 +3987,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8316723791311084784, guid: 292ada1ff937ea743b8ff656e230d4c2, type: 3}
   m_PrefabInstance: {fileID: 6269302709261837440}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6269302709261837442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 394729815645977113, guid: 292ada1ff937ea743b8ff656e230d4c2, type: 3}
+  m_PrefabInstance: {fileID: 6269302709261837440}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e79753956b2ce4fb0d7fd46b79916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
 --- !u!1001 &6894824174261697405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4145,6 +4160,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3843305158458037097, guid: 90417b35b06766f43a4b5f26b3d5116b, type: 3}
   m_PrefabInstance: {fileID: 6894824174261697405}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6894824174261697407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4809332600307576168, guid: 90417b35b06766f43a4b5f26b3d5116b, type: 3}
+  m_PrefabInstance: {fileID: 6894824174261697405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e79753956b2ce4fb0d7fd46b79916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
 --- !u!1001 &6934764571511181553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4307,6 +4333,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5804154905693730330, guid: 8db2155af404f664c9cbc80a43bfa0f4, type: 3}
   m_PrefabInstance: {fileID: 6934764571511181553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6934764571511181555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5301776614038633759, guid: 8db2155af404f664c9cbc80a43bfa0f4, type: 3}
+  m_PrefabInstance: {fileID: 6934764571511181553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e79753956b2ce4fb0d7fd46b79916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Upgrade
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

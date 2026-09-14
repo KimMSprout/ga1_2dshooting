@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
-
 public class PlayerMove : MonoBehaviour
 {
     public static float _borderLeft = -2.3f;
@@ -18,7 +17,6 @@ public class PlayerMove : MonoBehaviour
     // 필요 필드:
     [SerializeField] private float _speed;
     public float Speed => _speed;
-
 
     private Command _iCommand;
 
@@ -100,7 +98,9 @@ public class PlayerMove : MonoBehaviour
         // 3. 방향과 속도에 따라 이동한다.
         // 속도 = 방향 * 속력                      // 매직 넘버 : 보는 사람에 따라 의미가 달라질 수 있는 헷갈리는 숫자
 
-        Vector2 normalizedSpeed = direction * Speed;
+        float finalSpeed = _speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+
+        Vector2 normalizedSpeed = direction * finalSpeed;
         transform.Translate(normalizedSpeed * Time.deltaTime);
     }
 

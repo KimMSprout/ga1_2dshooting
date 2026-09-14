@@ -21,6 +21,6 @@ public class UI_Upgrade : MonoBehaviour
 
         _titleText.text = $"{upgrade.Name} Lv.{upgrade.Level}";
         _valueText.text = $"{upgrade.CurrentValue} -> {upgrade.NextValue}";
-        _titleText.text = $"{upgrade.Cost:N0}";
+        _scoreCostText.text = $"{upgrade.Cost:N0} Score";
     }
 }

@@ -50,7 +50,8 @@ public class Bullet : MonoBehaviour
 
             // 응집도는 높이고, 결합도는 낮춰라
             // 결합도란 묻는거... 매번 묻는거.. (너(객체) 체력 많아?
-            enemy.TakeDamage(Damage);
+            int finalDamage = Damage + (int)UpgradeManager.Instance.Upgrades[0].CurrentValue;
+            enemy.TakeDamage(finalDamage);
         }
     }
 

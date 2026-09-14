@@ -39,10 +39,13 @@ public class PlayerFire : MonoBehaviour
         FireCoolTime += Time.deltaTime;
         SubFireCoolTime += Time.deltaTime;
 
+        float finalRate = FireRate - UpgradeManager.Instance.Upgrades[1].CurrentValue;
+        float finalSubRate = SubFireRate - UpgradeManager.Instance.Upgrades[1].CurrentValue;
+
         // 1. 스페이스바를 누르면
         if ((Input.GetKey(KeyCode.Space) || _isAuto))
         {
-            if (FireCoolTime >= FireRate)
+            if (FireCoolTime >= finalRate)
             {
                 // 2. 총알 프리팹을 생성한다.
                 // Instantiate는 프리팹을 복사해서 (MonoBehavior를 상속받는) 게임 오브젝트를 생성하고 씬에 넣어주는 기능
@@ -56,7 +59,7 @@ public class PlayerFire : MonoBehaviour
                 FireCoolTime = 0;
             }
 
-            if (SubFireCoolTime >= SubFireRate)
+            if (SubFireCoolTime >= finalSubRate)
             {
                 Bullet subBulletLeft = BulletPool.Instance.GetBullet(BulletType.Sub);
                 subBulletLeft.transform.position = SubFirePointLeft.position;

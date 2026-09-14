@@ -51,9 +51,10 @@ public class PlayerAutoMove : MonoBehaviour
 
     private void Move()
     {
+        float finalSpeed = _moveSpeed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
         _direction = ((Vector3)_goalVector - transform.position).normalized;
 
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        transform.Translate(_direction * finalSpeed * Time.deltaTime);
     }
 
     private void ModeSwitch()
