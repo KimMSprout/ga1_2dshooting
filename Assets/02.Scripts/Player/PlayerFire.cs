@@ -21,7 +21,12 @@ public class PlayerFire : MonoBehaviour
     public float SubFireRate;
     public float SubFireCoolTime = 0;
 
-    public bool isAuto = false;
+    public bool _isAuto = false;
+
+    public void SetAuto(bool auto)
+    {
+        _isAuto = auto;
+    }
 
     private void Update()
     {
@@ -35,7 +40,7 @@ public class PlayerFire : MonoBehaviour
         SubFireCoolTime += Time.deltaTime;
 
         // 1. 스페이스바를 누르면
-        if ((Input.GetKey(KeyCode.Space) || isAuto))
+        if ((Input.GetKey(KeyCode.Space) || _isAuto))
         {
             if (FireCoolTime >= FireRate)
             {
@@ -68,7 +73,7 @@ public class PlayerFire : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            isAuto = !isAuto;
+            _isAuto = !_isAuto;
         }
     }
 
