@@ -59,6 +59,12 @@ public class ScoreManager : MonoBehaviour
         Refresh();
     }
 
+    public void SpendScore(int amount)
+    {
+        _currentScore -= amount;
+        Refresh();
+    }
+
     private void Refresh()
     {
         // 매 프레임이 아닌, 적을 처치했을 때만 UI를 다시 그리도록 지정

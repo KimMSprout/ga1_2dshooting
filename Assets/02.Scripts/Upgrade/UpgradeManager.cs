@@ -1,3 +1,4 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
@@ -25,12 +26,25 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
+        Load();
+
         RefreshUI();
     }
 
     public void LevelUp(int index)
     {
+        Upgrade upgrade = _upgrades[index];
+
+        if (ScoreManager.Instance.GetScore() <= upgrade.Cost)
+        {
+            return;
+        }
+
+        ScoreManager.Instance.SpendScore(upgrade.Cost);
+
         _upgrades[index].LevelUp();
+
+        Save();
 
         RefreshUI();
     }
@@ -40,6 +54,43 @@ public class UpgradeManager : MonoBehaviour
         foreach (UI_Upgrade uiUpgrade in _uiUpgrades)
         {
             uiUpgrade.Refresh();
+        }
+    }
+
+    private void Save()
+    {
+        // 데이터 저장은 유의미한 정보만 저장을 한다.
+
+        // 그래서 레벨만 저장한다.
+
+        UpgradeSaveData saveData = new UpgradeSaveData(_upgrades.Length);
+
+        for (int i = 0; i < _upgrades.Length; i++)
+        {
+            saveData.Name[i] = _upgrades[i].Name;
+            saveData.Level[i] = _upgrades[i].Level;
+        }
+
+        string json = JsonUtility.ToJson(saveData);
+        PlayerPrefs.SetString("UpgradeSaveData", json);
+
+        PlayerPrefs.Save();
+    }
+
+    private void Load()
+    {
+        if (!PlayerPrefs.HasKey("UpgradeSaveData")) return;
+
+
+        string json = PlayerPrefs.GetString("UpgradeSaveData", string.Empty);
+
+        if (json == string.Empty) return;
+
+        UpgradeSaveData saveData = JsonUtility.FromJson<UpgradeSaveData>(json);
+
+        for (int i = 0; i < _upgrades.Length; i++)
+        {
+            _upgrades[i].SetLevel(saveData.Level[i]);
         }
     }
 }
