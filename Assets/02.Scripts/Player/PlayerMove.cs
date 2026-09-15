@@ -52,8 +52,8 @@ public class PlayerMove : MonoBehaviour
         // Debug.Log("왼쪽 방향키를 누르는 중");
 
         // 1.2 
-        float h = Input.GetAxisRaw("Horizontal"); // 키보드 좌/우 입력 상태에 따라 -1f ~ 1f
-        float v = Input.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 1f
+        float h = SimpleInput.GetAxisRaw("Horizontal"); // 키보드 좌/우 입력 상태에 따라 -1f ~ 1f
+        float v = SimpleInput.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 1f
 
         // Debug.Log($"h:{h}, v:{v}");
 
