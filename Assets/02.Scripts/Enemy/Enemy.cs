@@ -7,6 +7,7 @@ public abstract class Enemy : MonoBehaviour
     private Animator _animator;
     // private AudioSource _damagedaudioSource;
 
+    [SerializeField] private int _baseHealth;
     [SerializeField] private int _health = 100;
     [SerializeField] protected float _moveSpeed = 5;
     [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
@@ -24,6 +25,12 @@ public abstract class Enemy : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         // _damagedaudioSource = GetComponent<AudioSource>();
+    }
+
+    public void SetHealthBalance(float multiplier)
+    {
+        // 체력 초기화
+        _health = (int)(_baseHealth * multiplier);
     }
 
     public void TakeDamage(int damage)

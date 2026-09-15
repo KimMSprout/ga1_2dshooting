@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    private const string Upgradesavedata = "UpgradeSaveData";
     // 업그레이드 관리자 : 특정 데이터에 대한 무결성과 생성, 조회, 수정, 삭제 등과 관련된 게임 로직
 
     private static UpgradeManager _instance = null;
@@ -72,17 +73,17 @@ public class UpgradeManager : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(saveData);
-        PlayerPrefs.SetString("UpgradeSaveData", json);
+        PlayerPrefs.SetString(Upgradesavedata, json);
 
         PlayerPrefs.Save();
     }
 
     private void Load()
     {
-        if (!PlayerPrefs.HasKey("UpgradeSaveData")) return;
+        if (!PlayerPrefs.HasKey(Upgradesavedata)) return;
 
 
-        string json = PlayerPrefs.GetString("UpgradeSaveData", string.Empty);
+        string json = PlayerPrefs.GetString(Upgradesavedata, string.Empty);
 
         if (json == string.Empty) return;
 

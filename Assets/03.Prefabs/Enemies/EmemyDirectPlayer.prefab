@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b9d35b99dfdad44a63ba470976f9d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDirectPlayer
+  _baseHealth: 90
   _health: 100
   _moveSpeed: 5
   _itemSpawnDataTable: {fileID: 11400000, guid: dcc75b24dba804045a179bb24de72c1b, type: 2}

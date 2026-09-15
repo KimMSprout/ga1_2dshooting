@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     private int _bestScore = 0;
     private int _currentScore = 0;
     private int _lastRefreshScore = -1;
+    public int CurrentScore => _currentScore;
+    public int BestScore => _bestScore;
 
     private const string SaveKey = "BestScore";
 

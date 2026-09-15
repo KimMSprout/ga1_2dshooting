@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 // 역할: 일정 시간마다 적을 생성해주고 싶다.
 public class EnemySpawner : MonoBehaviour
@@ -8,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _spawnInterval = 3f;
 
     [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+    [SerializeField] private EnemyBalanceDataTableSO _enemyDataTable;
 
     private float _timer;
 
@@ -52,8 +54,33 @@ public class EnemySpawner : MonoBehaviour
             {
                 Enemy enemy = EnemyPool.Instance.GetEnemy(data.EnemyPrefab.gameObject.GetComponent<Enemy>().Type);
                 enemy.transform.position = transform.position;
+                enemy.GetComponent<Enemy>().SetHealthBalance(GetHealthMultiplier());
                 break;
             }
         }
+    }
+
+    public float GetHealthMultiplier()
+    {
+        // TODO: 기획자에게 물어보기
+        int bestScore = ScoreManager.Instance.BestScore;
+        float multiplier = 1f;
+
+        EnemyBalanceData[] _enemyBalanceData = _enemyDataTable.Datas;
+
+
+        for (int i = 0; i < _enemyBalanceData.Length; i++)
+        {
+            if (bestScore > _enemyBalanceData[i].RequiredScore)
+            {
+                multiplier = _enemyBalanceData[i].HealthMultiplier;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return multiplier;
     }
 }
