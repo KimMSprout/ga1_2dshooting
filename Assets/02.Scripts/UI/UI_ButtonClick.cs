@@ -6,14 +6,13 @@ public class UI_ButtonClick : MonoBehaviour
     private Button _button;
     private AudioSource _audioSource;
 
-    [Header("클릭시 애니메이션")]
     [SerializeField] private AnimationCurve _bumpCurve;
 
-    private float _scale = 1.0f;
+    private float _scale = 2.0f;
     private bool _isBumping = false;
     private float _elapsedTime = 0f;
     private const float BumpDuration = 0.3f;
-    private const float BumpScale = 1.1f;
+    private const float BumpScale = 2.1f;
 
     public void Start()
     {
@@ -44,7 +43,7 @@ public class UI_ButtonClick : MonoBehaviour
 
         if (_elapsedTime > BumpDuration)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = Vector3.one * 2;
             _isBumping = false;
             return;
         }

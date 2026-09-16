@@ -332,7 +332,7 @@ RectTransform:
   m_GameObject: {fileID: 244608902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1732861587}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1206005349077091292, guid: 3cc2dde78e699fa43bd26e2a386f678e, type: 3}
+  m_Sprite: {fileID: 2585730359333395145, guid: 7d682d8568d6adb40a46b465c2cba5c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1bd290a5dab424d8f17e3a1344df7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_AutoButton
-  _onSprite: {fileID: 1206005349077091292, guid: 3cc2dde78e699fa43bd26e2a386f678e, type: 3}
-  _offSprite: {fileID: 2475711161320758719, guid: 20f2209590b716b408a22009158714aa, type: 3}
+  _onSprite: {fileID: 2585730359333395145, guid: 7d682d8568d6adb40a46b465c2cba5c2, type: 3}
+  _offSprite: {fileID: -1196866263293263332, guid: 1b02944e042ee0842bdabd2b42203fa6, type: 3}
 --- !u!82 &244608908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,7 @@ RectTransform:
   m_GameObject: {fileID: 443508442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4508, y: 1.4508, z: 1.4508}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1099306774}
@@ -1084,7 +1084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 350}
+  m_AnchoredPosition: {x: -24, y: 287}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &443508445
